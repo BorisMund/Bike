@@ -1,0 +1,202 @@
+@use './utils/variables' as *;
+@use './utils/mixins' as *;
+// #region details
+.details {
+  &__container {
+    max-width: 1260px;
+
+    @include container-grid;
+  }
+  &__title {
+    // display: none !important;
+    color: white;
+    grid-column: 5 / 9;
+    white-space: nowrap;
+    font-family: $font-main;
+    font-weight: $font-weight-text-regular;
+    font-size: $font-size-tittle-base;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    justify-self: center;
+
+    @include onPhones {
+      grid-column: 1 / -1;
+      font-size: 32px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @include onTablet {
+      grid-column: 2 / 6;
+      font-size: 48px;
+      text-align: center; // Текст внутри элемента по центру
+      justify-self: center; //элемент встал по центру колонки грида
+    }
+  }
+  &__list {
+    row-gap: 208px;
+    @include container-grid;
+    padding-left: 120px;
+    padding-right: 120px;
+
+    @include onPhones {
+      padding-left: 20px;
+      padding-right: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include onTablet {
+      min-height: 187px;
+    }
+  }
+
+  &__card {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 320px;
+    // max-width: 320px;
+    // gap: 8px;
+
+    @include onPhones {
+      //  max-width: 180px;
+      min-height: 130px;
+      background-size: cover;
+      background-position: center;
+      min-width: 230px;
+    }
+
+    @include onTablet {
+      min-height: 187px;
+    }
+  }
+  &__card--unlock {
+    grid-column: 1 / 9;
+    background-image: url(../images/details/firsttt.jpg);
+
+    @include onPhones {
+      grid-column: 1 / 2;
+      min-height: 130px;
+      background-size: cover;
+      background-position: center;
+    }
+    @include onTablet {
+      grid-column: 1 / 5;
+      height: 187px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  &__card--hand {
+    grid-column: 9 / 13;
+    background-image: url(../images/details/second.jpg);
+
+    @include onPhones {
+      grid-column: 2 / -1;
+      // min-height: 130px;
+      background-size: cover;
+      background-position: center;
+    }
+    @include onTablet {
+      grid-column: 5 / 12;
+      // width: 184px;
+      height: 187px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  &__card--lights {
+    grid-column: 1 / 9;
+    background-image: url(../images/details/three.jpg);
+
+    @include onPhones {
+      grid-column: 1 / 2;
+      // font-size: 32px;
+    }
+    @include onTablet {
+      grid-column: 1 / 5;
+      height: 187px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  &__card--frame {
+    background-image: url(../images/details/four.jpg);
+    // min-height: 320px;
+    background-size: cover;
+    background-position: center;
+    grid-column: 9 / 13;
+    @include onPhones {
+      grid-column: 2 / -1;
+      // font-size: 32px;
+    }
+
+    @include onTablet {
+      grid-column: 5 / 12;
+      height: 187px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  &__card--disc {
+    grid-column: 1 / 5;
+    background-image: url(../images/details/fivee.jpg);
+    // min-height: 320px;
+
+    @include onPhones {
+      grid-column: 1 / 2;
+      // font-size: 32px;
+    }
+    @include onTablet {
+      grid-column: 1 / 5;
+      height: 187px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  &__card--wheel {
+    background-image: url(../images/details/six.jpg);
+    grid-column: 5 / 13;
+    // min-height: 320px;
+
+    @include onPhones {
+      grid-column: 2 / -1;
+      // font-size: 32px;
+    }
+
+    @include onTablet {
+      grid-column: 5 / 12;
+      height: 187px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  &__image {
+    background-size: cover;
+    height: 100%;
+    // width: 672px;
+  }
+  &__name {
+    grid-column: 1 / 2;
+  }
+  &__description {
+    width: 100%;
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: $font-size-text-base;
+    line-height: $font-height-base;
+    letter-spacing: 0px;
+  }
+  @include onPhones {
+    overflow-x: hidden;
+  }
+  @include onTablet {
+  }
+}
+
+.button {
+  margin-bottom: 49px;
+
+  @include onTablet {
+    margin-bottom: 49px;
+  }
+}
+// #endregion details

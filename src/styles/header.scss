@@ -12,7 +12,6 @@
     background-image: url(../images/hero-bike.jpg);
     background-position: center;
     height: 711px;
-    // overflow-x: hidden;
 
     @include onTablet {
       background-image: url(../images/header-mybike/hero-mobile.png);
@@ -47,6 +46,7 @@
       width: 100%;
       padding: 0 20px 0 20px;
     }
+
     @include onTablet {
       width: 100%;
       padding: 0;
@@ -55,18 +55,18 @@
   }
   &__logo {
     grid-column: 1 / 2;
-    // max-width: 187px;
-    // width: 100%;
     padding-top: 20px;
 
     @include onPhones {
       grid-column: 1 / -1;
     }
+
     @include onTablet {
       grid-column: 1 / 3;
       font-size: 48px;
       padding-top: 20px;
     }
+
     @include onDesctop {
     }
   }
@@ -97,8 +97,7 @@
     height: 16px;
     justify-self: end;
     @include onPhones {
-      // grid-column: 1 / 2;
-      // justify-self: start;
+
     }
     @include onTablet {
       grid-column: 6 / 7;
@@ -218,10 +217,6 @@
 .menu:target {
   transform: translateX(0);
 
-  // @include onTablet {
-  //   top: 0;
-  //   left: 110;
-  // }
 }
 
 // #region nav
