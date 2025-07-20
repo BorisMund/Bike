@@ -1,0 +1,57 @@
+@use './variables' as *;
+// @mixin onMobile {
+//   @media (max-width: 320px) {
+//     @content;
+//   }
+// }
+@mixin onPhones {
+  @media (min-width: 321px) and (max-width: 643px) {
+    @content;
+  }
+}
+@mixin onTablet {
+  @media (min-width: 644px) and (max-width: 1023px) {
+    @content;
+  }
+}
+@mixin onDesctop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin container-grid {
+  --columns: 12;
+
+  // padding-left: $side-padding;
+  // padding-right: $side-padding;
+  display: grid;
+  column-gap: 24px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  margin: 0 auto;
+
+  @include onTablet {
+    --columns: 6;
+    column-gap: 24px;
+      // padding-left: 72px; // ← 👈 как в макете
+      // padding-right: 72px;
+    grid-template-columns: repeat(var(--columns), 1fr); // ← пересчёт!
+  }
+  @include onPhones {
+    --columns: 4;
+    column-gap: 20px;
+    // padding-left: 20px; // ← 👈 как в макете
+    // padding-right: 20px;
+    grid-template-columns: repeat(var(--columns), 1fr); // ← пересчёт!
+  }
+}
+
+// mixin for icons and size
+@mixin icon-button {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}

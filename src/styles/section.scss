@@ -1,0 +1,192 @@
+@use './utils/variables' as *;
+@use './utils/mixins' as *;
+
+// #region hero
+
+.hero {
+  &__container {
+    align-items: center;
+    @include container-grid;
+    @include onPhones {
+    }
+  }
+  &__title {
+    grid-column: 2 / 3;
+    font-family: $font-main;
+    font-weight: $font-weight-text-regular;
+    font-size: $font-size-tittle-base;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    white-space: nowrap;
+
+    @include onPhones {
+      grid-column: 1 / -1;
+      font-size: 32px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @include onTablet {
+      grid-column: 1 / 3;
+      font-size: 48px;
+      white-space: nowrap;
+    }
+  }
+
+  &__description {
+    font-weight: $font-weight-text-regular;
+    font-size: 23px;
+    line-height: $font-height-base;
+    letter-spacing: 1px;
+    grid-column: 5 / 10;
+    align-items: center;
+
+    @include onPhones {
+      padding-left: 20px;
+      padding-right: 20px;
+      grid-column: 1 / -1;
+    }
+
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+  }
+}
+// #endregion hero
+
+// #region bike
+.bike {
+  &__container {
+    max-width: 1260px; // height: 566px;
+    @include container-grid;
+    margin: 0 auto;
+
+    @include onTablet {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    @include onPhones {
+      margin: 0 auto;
+      justify-content: center;
+      padding-left: 16px;
+      padding-right: 16x;
+    }
+  }
+  &__title {
+    color: white;
+    grid-column: 5 / 12;
+    // align-items: center;
+    font-family: $font-main;
+    font-weight: $font-weight-text-regular;
+    font-size: $font-size-tittle-base;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      font-size: 48px;
+      text-align: center;
+    }
+    @include onPhones {
+      grid-column: 1 / -1;
+      font-size: 32px;
+      line-height: 32px;
+      text-align: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  &__list {
+    // padding-left: 100px;
+    // padding-right: 100px;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 24px;
+
+    @include onTablet {
+      // grid-template-columns: repeat(auto-fit,280px, 1fr)
+    }
+    @include onPhones {
+      grid-template-columns: 2fr;
+      justify-items: center;
+    }
+  }
+
+  &__card {
+    background-repeat: no-repeat;
+
+    @include onPhones {
+      grid-template-columns: 1fr;
+      width: 292px;
+      background-size: contain;
+    }
+  }
+  &__image {
+    width: 324px;
+    height: 256px;
+    margin: 0 auto;
+    display: block;
+  }
+  &__card--sporty {
+    // grid-column: 1 / 5;
+    background-image: url(../images/compare-bike/sporty4-compare.jpg);
+  }
+  &__card--st {
+    // grid-column: 5 / 9;
+    background-image: url(../images/compare-bike/ride-in-town.jpg);
+  }
+  &__card--agile {
+    // grid-column: 9 / 13;
+
+    background-image: url(../images/compare-bike/agile-ride3.jpg);
+  }
+
+  &__name {
+    font-family: $font-main;
+    font-size: $font-size-name-base;
+    font-weight: $font-weight-name-regular;
+    line-height: $font-height-base;
+    letter-spacing: 0px;
+  }
+  &__description {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: $font-size-text-base;
+    line-height: $font-height-base;
+    letter-spacing: 0px;
+  }
+  &__price {
+    font-family: $font-main;
+    font-weight: $font-weight-name-regular;
+    font-size: $font-size-name-base;
+    line-height: $font-height-base;
+    letter-spacing: 0px;
+  }
+}
+// #endregion bike
+
+.button {
+  margin-top: 230px;
+  grid-column: 5 / 9;
+  height: 56px;
+  border-radius: 40px;
+  @include onTablet {
+    grid-column: 2 / 6;
+    margin-top: 300px;
+    //  justify-self: center;
+  }
+  @include onPhones {
+    grid-column: 1 / -1;
+
+    margin-top: 300px;
+  }
+
+  &__text {
+    font-family: $font-main;
+    font-weight: $font-weight-name-regular;
+    font-size: $font-size-text-base;
+    line-height: 27px;
+    align-items: center;
+    margin: 0 auto;
+  }
+}

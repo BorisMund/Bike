@@ -1,3 +1,44 @@
+// #region Utilities
+@use '../styles/utils/variables' as *;
+@use '../styles/header' as *;
+@use './utils/mixins' as *;
+@use './section' as *;
+@use './details.scss' as *;
+@use './footer.scss' as *;
+// #endregion Utilities
+
+// #region variables
+
+// #endregion variables
+* {
+  box-sizing: border-box;
+  // outline: 1px solid red;
+}
+// #region body
+
 body {
   margin: 0;
+  padding: 0;
+  background-color: #1d1d1d;
+  // overflow-x: hidden;
 }
+// #endregion body
+
+// #region container
+
+.container {
+  padding: 0;
+  max-width: 1380px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #1d1d1d;
+
+  @include onPhones {
+    // margin: 0 auto;
+  }
+
+  @include onTablet {
+
+  }
+}
+// #endregion container
